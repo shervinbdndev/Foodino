@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+  <title>فودینو | غذا ها</title>
+{% endblock title %}
+{% block body %}
+<body class="sub_page">
+  <div class="hero_area">
+    {% include 'includes/header.html' %}
+    {% include 'includes/sections/section-slider.html' %}
+  </div>
+
+  <style type="text/css">
+    h2, h3 {
+      font-family: Lalezar;
+    }
+
+    h2 {
+      font-weight: 300;
+    }
+
+    h3 {
+      font-weight: 500;
+    }
+  </style>
+
+  <section class="vh-100">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center ">
+        <div class="w-full flex flex-wrap items-center">
+          {% for food in foods %}
+            <div class="w-full lg:w-1/4 px-4 py-4">
+              <div class="p-4 bg-body-secondary shadow rounded-xl text-center">
+                <div class="flex justify-center items-center pt-5">
+                  <img class="max-w-60" src="{{ food.image.url }}">
+                </div>
+                <h2 class="mb-2 text-2xl">{{ food.name }}</h2>
+                <h3 class="mb-3 text-xl text-black">قیمت: {{ food.price }}</h3>
+                <h3 class="mb-3 text-xl text-black">تعداد: {{ food.quantity }}</h3>
+                <h2 class="mb-5 text-xl text-secondary">{{ food.ingredients }}</h2>
+                <div class="btn-box">
+                  <a class="btn btn-md btn-dark btn-outline-dark fs-2 fw-bold text-white" style="font-family: Lalezar;" href="#">
+                    اطلاعات بیشتر
+                  </a>
+                  <a class="btn btn-md btn-info btn-outline-info fs-2 fw-bold text-white" style="font-family: Lalezar;" href="{% url 'add' food.id %}">
+                    ثبت سفارش
+                  </a>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {% include 'includes/footer.html' %}
+</body>
+{% endblock body %}

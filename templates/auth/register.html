@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+  <title>ایجاد حساب کاربری | Foodino</title>
+{% endblock title %}
+{% block body %}
+    <link rel="stylesheet" href="{% static 'css/auth.css' %}">
+    <body>
+    <div class="wrapper">
+        <h2>فرم ثبت نام</h2>
+        <form action="{% url 'register' %}" enctype="multipart/form-data" method="post">
+            {% csrf_token %}
+            {% for form in register_form %}
+                <div class="input-box">
+                    {{ form }}
+                    {{ form.errors }}
+                </div>
+            {% endfor %}
+            <div class="policy">
+                <h3 class="mt-2">با تمامی شرایط و ضوابط فودینو موافق هستم</h3>
+                <input type="checkbox">
+            </div>
+            <div class="input-box button">
+                <input type="submit" value="ثبت نام">
+            </div>
+            <div class="text">
+                <h3>حساب کاربری دارید؟ <a href="{% url 'login' %}">ورود کنید</a></h3>
+            </div>
+        </form>
+    </div>
+    </body>
+{% endblock body %}

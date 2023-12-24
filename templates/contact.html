@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+  <title>فودینو | ارتباط با ما</title>
+{% endblock title %}
+{% block body %}
+<body class="sub_page">
+  <div class="hero_area">
+    {% include 'includes/header.html' %}
+    {% include 'includes/sections/section-slider.html' %}
+  </div>
+
+  {% include 'includes/sections/section-contact-us.html' %}
+  {% include 'includes/sections/section-followon.html' %}
+  {% include 'includes/footer.html' %}
+  
+</body>
+{% endblock body %}
+
+</html>

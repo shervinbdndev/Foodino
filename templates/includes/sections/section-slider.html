@@ -1,0 +1,77 @@
+{% load static %}
+<section class="slider_section position-relative">
+    <div class="side_heading">
+      <h5>
+        و
+        ن
+        ی
+        د
+        و
+        ف
+      </h5>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-3 col-md-4 offset-md-1">
+          <div id="carouselExampleIndicators" class="carousel slide " data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active">
+                ۰١
+              </li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="1">
+                ۰۲
+              </li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="2">
+                ۰۳
+              </li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="3">
+                ۰۴
+              </li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="img-box b-1">
+                  <img src="{% static 'images/slider-img.png' %}">
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="img-box b-2">
+                  <img src="{% static 'images/hot-1.png' %}">
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="img-box b-3">
+                  <img src="{% static 'images/hot-2.png' %}">
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="img-box b-4">
+                  <img src="{% static 'images/hot-3.png' %}">
+                </div>
+              </div>
+            </div>
+            <div class="carousel_btn-box">
+              <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class=" col-md-5 offset-md-1">
+          <div class="detail-box">
+            <h1>
+              غذای <br>
+              عالی
+            </h1>
+            <p class="mt-5" style="font-family: Lalezar;">
+              انواع مختلفی از قسمت‌های لورم ایپسوم در دسترس است،
+              اما اکثر آنها به شکلی از طریق طنز تزریقی یا کلمات تصادفی دچار تغییر شده‌اند
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>

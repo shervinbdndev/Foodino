@@ -1,0 +1,46 @@
+{% load static %}
+<section class="hot_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          محبوب ها
+        </h2>
+        <hr>
+      </div>
+      <p>
+        انواع مختلفی از قسمت‌های لورم ایپسوم در دسترس است
+      </p>
+    </div>
+    <div class="carousel_container">
+      <div class="container">
+        <div class="carousel-wrap ">
+          <div class="owl-carousel">
+            {% for food in foods %}
+              <div class="item">
+                <div class="box">
+                  <div class="img-box">
+                    <img class="max-w-40" src="{{ food.image.url }}">
+                  </div>
+                  <div class="detail-box">
+                    <p class="text-primary">{{ food.name }}</p>
+                    <h4 style="font-family: Lalezar;">
+                      {{ food.price }}
+                    </h4>
+                    <h4 style="font-family: Lalezar;">
+                      تومان
+                    </h4>
+                    <p>
+                      {{ food.ingredients }}
+                    </p>
+                    <a class="btn-1" href="{% url 'foods' %}">
+                      اطلاعات بیشتر
+                    </a>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+</section>

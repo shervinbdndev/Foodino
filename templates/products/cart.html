@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+  <title>فودینو | سبد خرید</title>
+{% endblock title %}
+{% block body %}
+    <body class="sub_page">
+        <div class="hero_area">
+            {% include 'includes/header.html' %}
+        </div>
+
+        <style type="text/css">
+            h2, h3 {
+            font-family: Lalezar;
+            }
+
+            h2 {
+            font-weight: 300;
+            }
+
+            h3 {
+            font-weight: 500;
+            }
+        </style>
+
+        <section class="vh-100">
+            <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center ">
+                <div class="w-full flex flex-wrap items-center">
+                {% for item in cart_items %}
+                    <div class="w-full lg:w-1/4 px-4 py-4">
+                    <div class="p-4 bg-body-secondary shadow rounded-xl text-center">
+                        <div class="flex justify-center items-center pt-5">
+                        <!-- <img class="max-w-60" src="{{ item.image.url }}"> -->
+                        </div>
+                        <h2 class="mb-2 text-2xl">{{ item.product }}</h2>
+                        <!-- <h3 class="mb-3 text-xl text-black">قیمت: {{ item.price }}</h3>
+                        <h2 class="mb-5 text-xl text-secondary">{{ item.ingredients }}</h2> -->
+                        <div class="btn-box">
+                            <!--  -->
+                        </div>
+                    </div>
+                    </div>
+                {% endfor %}
+                </div>
+            </div>
+            </div>
+        </section>
+        {% include 'includes/footer.html' %}
+    </body>
+{% endblock body %}

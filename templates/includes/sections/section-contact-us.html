@@ -1,0 +1,51 @@
+{% load static %}
+<section class="contact_section layout_padding-bottom ">
+    <div class="container">
+      <h2 style="font-family: Lalezar;">
+        با ما در تماس باشید
+      </h2>
+      <div class="row">
+        <div class="col-md-7">
+          <div class="form_container">
+            <form action="">
+              <input type="text" placeholder="Name">
+              <input type="text" placeholder="Phone number">
+              <input type="email" placeholder="Email">
+              <input type="text" placeholder="Message" class="message_input">
+              <button>
+                Send
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div class="contact_box">
+            <a href="">
+              <div class="img-box">
+                <img src="{% static 'images/location.png' %}">
+              </div>
+              <h6>
+                Gb road 123 london Uk
+              </h6>
+            </a>
+            <a href="">
+              <div class="img-box">
+                <img src="{% static 'images/call.png' %}">
+              </div>
+              <h6>
+                (+01) 123456789012
+              </h6>
+            </a>
+            <a href="">
+              <div class="img-box">
+                <img src="{% static 'images/envelope.png' %}">
+              </div>
+              <h6>
+                demo@gmail.com
+              </h6>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>

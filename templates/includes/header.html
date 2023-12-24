@@ -1,0 +1,50 @@
+{% load static %}
+<header class="header_section">
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container">
+        <a class="navbar-brand" href="index.html">
+            <img src="{% static 'images/logo.png' %}">
+            <span>
+            فودینو
+            </span>
+        </a>
+
+        <div class="mr-5">
+            <a href="{% url 'cart' %}" style="font-family: Lalezar;" class="btn btn-md bg-dark btn-outline-dark fs-2 fw-bold text-white ml-5">
+                سبد خرید
+                <i style="border: 1px solid red;" class="badge bg-transparent text-white ms-1 rounded-pill ">
+                    {% if request.session.cart_items_count %}
+                        {{ request.session.cart_items_count }}
+                    {% else %}
+                        0
+                    {% endif %}
+                </i>
+            </a>
+        </div>
+
+        <div class="navbar-collapse" id="">
+            <div class="custom_menu-btn">
+            <button onclick="openNav()">
+                <span class="s-1"> </span>
+                <span class="s-2"> </span>
+                <span class="s-3"> </span>
+            </button>
+            </div>
+            <div id="myNav" class="overlay">
+            <div class="overlay-content">
+                <a href="{% url 'index' %}">خانه</a>
+                {% if not request.user.is_authenticated %}
+                    <a href="{% url 'register' %}">ایجاد حساب کاربری</a>
+                    <a href="{% url 'login' %}">ورود به حساب کاربری</a>
+                {% else %}
+                    <a href="{% url 'logout' %}">خروج از حساب کاربری</a>
+                {% endif %}
+                <a href="about.html">درباره ما</a>
+                <a href="{% url 'foods' %}">غذاها</a>
+                <a href="{% url 'contact' %}">تماس با ما</a>
+            </div>
+            </div>
+        </div>
+        </nav>
+    </div>
+</header>

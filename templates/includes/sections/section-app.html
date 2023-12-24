@@ -1,0 +1,41 @@
+{% load static %}
+<style type="text/css">
+  h1, h2, p {
+    font-family: Lalezar;
+  }
+
+  .btn-box {
+    justify-content: center;
+  }
+</style>
+<section class="app_section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="img-box">
+            <img src="{% static 'images/man-with-phone.png' %}">
+          </div>
+        </div>
+        <div class="col-md-6 offset-md-2">
+          <div class="detail-box">
+            <h1 align="center" style="font-family: Lalezar; font-size: 60px;">۵۰% </h1>
+            <h2 align="center" style="font-family: Lalezar; font-size: 25px;">
+               تخفیف رو همه غذاها، نرم افزار ما رو دانلود کنید
+            </h2>
+            <p align="center">
+              انواع مختلفی از قسمت‌های لورم ایپسوم در دسترس است،
+              اما اکثر آنها به شکلی از طریق طنز تزریقی یا کلمات تصادفی دچار تغییر شده‌اند
+            </p>
+            <div class="btn-box">
+              <a href="">
+                <img src="{% static 'images/app-store.png' %}">
+              </a>
+              <a href="">
+                <img src="{% static 'images/play-store.png' %}">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>

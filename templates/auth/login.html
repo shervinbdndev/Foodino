@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+  <title>ورود به حساب کاربری | Foodino</title>
+{% endblock title %}
+{% block body %}
+    <link rel="stylesheet" href="{% static 'css/auth.css' %}">
+    <body>
+    <div class="wrapper">
+        <h2>فرم ورود</h2>
+        <form action="{% url 'login' %}" enctype="multipart/form-data" method="post">
+            {% csrf_token %}
+            {% for form in login_form %}
+                <div class="input-box">
+                    {{ form }}
+                    {{ form.errors }}
+                </div>
+            {% endfor %}
+            <div class="input-box button">
+                <input type="submit" value="ورود">
+            </div>
+            <div class="text">
+                <h3>حساب کاربری ندارید؟ <a href="{% url 'register' %}">ایجاد کنید</a></h3>
+                <h3>رمز ورود خود را فراموش کرده اید؟ <a href="#">رمز ورود خود را عوض کنید</a></h3>
+            </div>
+        </form>
+    </div>
+    </body>
+{% endblock body %}
